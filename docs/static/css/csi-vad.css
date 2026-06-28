@@ -200,23 +200,23 @@ body {
   display: grid;
   grid-template-columns: minmax(260px, 0.42fr) minmax(0, 0.58fr);
   gap: 1.25rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 .video-frame {
-  display: flex;
-  align-items: center;
-  border: 2px solid #1e3354;
+  align-self: start;
+  border: 1px solid #cfd9e4;
   border-radius: 8px;
   overflow: hidden;
-  background: #111820;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(20, 32, 45, 0.08);
 }
 
 .video-frame video {
   display: block;
   width: 100%;
   height: auto;
-  background: #111820;
+  background: #ffffff;
 }
 
 .judgement-stack {
