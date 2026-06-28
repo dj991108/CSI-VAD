@@ -204,7 +204,7 @@ body {
 }
 
 .video-frame {
-  align-self: start;
+  align-self: center;
   border: 1px solid #cfd9e4;
   border-radius: 8px;
   overflow: hidden;
