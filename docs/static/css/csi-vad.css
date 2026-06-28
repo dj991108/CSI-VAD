@@ -160,6 +160,9 @@ body {
 .ours-row {
   background: #e5f3ff;
   box-shadow: inset 4px 0 0 #2b74d6;
+}
+
+.ours-row td:first-child {
   font-weight: 700;
 }
 
@@ -212,8 +215,7 @@ body {
 .video-frame video {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
   background: #111820;
 }
 
