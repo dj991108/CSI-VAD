@@ -150,15 +150,23 @@ body {
   vertical-align: middle;
 }
 
+.paper-table th:nth-child(2),
+.paper-table th:nth-child(3),
+.paper-table td:nth-child(2),
+.paper-table td:nth-child(3) {
+  text-align: center;
+}
+
 .ours-row {
   background: #e5f3ff;
   box-shadow: inset 4px 0 0 #2b74d6;
   font-weight: 700;
 }
 
-.paper-table em {
-  font-style: italic;
-  font-weight: 700;
+.underlined-score {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  font-weight: 400;
 }
 
 .qualitative-intro {
@@ -168,42 +176,61 @@ body {
 }
 
 .qualitative-case {
-  max-width: 980px;
+  max-width: 1120px;
   margin: 2rem auto 0;
-}
-
-.qualitative-case video {
-  display: block;
-  width: min(720px, 100%);
-  margin: 0 auto;
-  border: 2px solid #1e3354;
-  border-radius: 2px;
-  background: #111820;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: #ffffff;
   box-shadow: 0 10px 24px rgba(20, 32, 45, 0.08);
 }
 
 .qualitative-case h3 {
-  margin: 0.7rem 0 1rem;
+  margin: 0 0 1rem;
   color: var(--text-primary);
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 800;
   text-align: center;
 }
 
-.judgement-grid {
+.qualitative-case-body {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.3rem;
+  grid-template-columns: minmax(260px, 0.42fr) minmax(0, 0.58fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.video-frame {
+  display: flex;
+  align-items: center;
+  border: 2px solid #1e3354;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111820;
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #111820;
+}
+
+.judgement-stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
 }
 
 .judgement-card {
   display: grid;
   grid-template-columns: 2.4rem minmax(0, 1fr);
   gap: 0.85rem;
-  min-height: 10.5rem;
-  padding: 1.1rem;
+  min-height: 11rem;
+  padding: 1rem;
   border: 2px solid #1e3354;
-  border-radius: 22px;
+  border-radius: 8px;
   background: #ffffff;
 }
 
@@ -265,7 +292,11 @@ body {
     margin-right: 0;
   }
 
-  .judgement-grid {
+  .qualitative-case-body {
     grid-template-columns: 1fr;
+  }
+
+  .judgement-stack {
+    grid-template-rows: auto;
   }
 }

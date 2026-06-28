@@ -230,7 +230,7 @@
                 <tr><td>DUAL VAD</td><td>&times;</td><td>92.33</td></tr>
                 <tr class="ours-row"><td>Ours<sub>256</sub> (Max Ensemble)</td><td>&#10003;</td><td>89.33</td></tr>
                 <tr class="ours-row"><td>Ours<sub>256</sub> (Mean Ensemble)</td><td>&#10003;</td><td><strong>92.90</strong></td></tr>
-                <tr class="ours-row"><td>Ours<sub>256</sub> (Noisy-OR)</td><td>&#10003;</td><td><em>92.88</em></td></tr>
+                <tr class="ours-row"><td>Ours<sub>256</sub> (Noisy-OR)</td><td>&#10003;</td><td><span class="underlined-score">92.88</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -247,75 +247,87 @@
 
         <div class="qualitative-cases">
           <article class="qualitative-case">
-            <video controls muted preload="metadata" poster="static/images/Fighting003_x264_poster.jpg">
-              <source src="static/videos/Fighting003_x264.mp4" type="video/mp4">
-            </video>
             <h3>Fighting003_x264</h3>
-            <div class="judgement-grid">
-              <div class="judgement-card wrong">
-                <div class="judgement-mark">X</div>
-                <div class="judgement-content">
-                  <h4>Baseline</h4>
-                  <p class="judgement-meta">Label: 0 &nbsp; Score: 0.1</p>
-                  <p>The video depicts a typical scene in a subway station with people walking and using the turnstiles. <strong>There is no indication of abnormal, criminal, or deviant behavior.</strong></p>
-                </div>
+            <div class="qualitative-case-body">
+              <div class="video-frame">
+                <video controls muted preload="metadata" poster="static/images/Fighting003_x264_poster.jpg">
+                  <source src="static/videos/Fighting003_x264.mp4" type="video/mp4">
+                </video>
               </div>
-              <div class="judgement-card correct">
-                <div class="judgement-mark">O</div>
-                <div class="judgement-content">
-                  <h4>Time</h4>
-                  <p class="judgement-meta">Label: 1 &nbsp; Score: 0.8</p>
-                  <p><strong>The presence of a physical altercation</strong>, a person being forcibly removed by security, and a person running through the station while others assist a fallen individual suggest abnormal and potentially criminal behavior.</p>
+              <div class="judgement-stack">
+                <div class="judgement-card wrong">
+                  <div class="judgement-mark">X</div>
+                  <div class="judgement-content">
+                    <h4>Baseline</h4>
+                    <p class="judgement-meta">Label: 0 &nbsp; Score: 0.1</p>
+                    <p>The video depicts a typical scene in a subway station with people walking and using the turnstiles. <strong>There is no indication of abnormal, criminal, or deviant behavior.</strong></p>
+                  </div>
+                </div>
+                <div class="judgement-card correct">
+                  <div class="judgement-mark">O</div>
+                  <div class="judgement-content">
+                    <h4>Time</h4>
+                    <p class="judgement-meta">Label: 1 &nbsp; Score: 0.8</p>
+                    <p><strong>The presence of a physical altercation</strong>, a person being forcibly removed by security, and a person running through the station while others assist a fallen individual suggest abnormal and potentially criminal behavior.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </article>
 
           <article class="qualitative-case">
-            <video controls muted preload="metadata" poster="static/images/Shoplifting001_x264_poster.jpg">
-              <source src="static/videos/Shoplifting001_x264.mp4" type="video/mp4">
-            </video>
             <h3>Shoplifting001_x264</h3>
-            <div class="judgement-grid">
-              <div class="judgement-card wrong">
-                <div class="judgement-mark">X</div>
-                <div class="judgement-content">
-                  <h4>Baseline</h4>
-                  <p class="judgement-meta">Label: 0 &nbsp; Score: 0.1</p>
-                  <p>The video shows a typical retail environment with customers browsing and interacting with store staff. <strong>There is no indication of abnormal, criminal, or deviant behavior.</strong></p>
-                </div>
+            <div class="qualitative-case-body">
+              <div class="video-frame">
+                <video controls muted preload="metadata" poster="static/images/Shoplifting001_x264_poster.jpg">
+                  <source src="static/videos/Shoplifting001_x264.mp4" type="video/mp4">
+                </video>
               </div>
-              <div class="judgement-card correct">
-                <div class="judgement-mark">O</div>
-                <div class="judgement-content">
-                  <h4>Object</h4>
-                  <p class="judgement-meta">Label: 1 &nbsp; Score: 0.9</p>
-                  <p>The video captures a <strong>theft scenario where an individual in an orange shirt is seen taking items from a store shelf without paying</strong>, which is considered criminal behavior.</p>
+              <div class="judgement-stack">
+                <div class="judgement-card wrong">
+                  <div class="judgement-mark">X</div>
+                  <div class="judgement-content">
+                    <h4>Baseline</h4>
+                    <p class="judgement-meta">Label: 0 &nbsp; Score: 0.1</p>
+                    <p>The video shows a typical retail environment with customers browsing and interacting with store staff. <strong>There is no indication of abnormal, criminal, or deviant behavior.</strong></p>
+                  </div>
+                </div>
+                <div class="judgement-card correct">
+                  <div class="judgement-mark">O</div>
+                  <div class="judgement-content">
+                    <h4>Object</h4>
+                    <p class="judgement-meta">Label: 1 &nbsp; Score: 0.9</p>
+                    <p>The video captures a <strong>theft scenario where an individual in an orange shirt is seen taking items from a store shelf without paying</strong>, which is considered criminal behavior.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </article>
 
           <article class="qualitative-case">
-            <video controls muted preload="metadata" poster="static/images/Normal_Videos_925_x264_poster.jpg">
-              <source src="static/videos/Normal_Videos_925_x264.mp4" type="video/mp4">
-            </video>
             <h3>Normal_Videos_925_x264</h3>
-            <div class="judgement-grid">
-              <div class="judgement-card wrong">
-                <div class="judgement-mark">X</div>
-                <div class="judgement-content">
-                  <h4>Baseline</h4>
-                  <p class="judgement-meta">Label: 1 &nbsp; Score: 0.9</p>
-                  <p>The video shows a <strong>sudden and dramatic increase in brightness, likely indicating an explosion or fire, which is an abnormal event.</strong></p>
-                </div>
+            <div class="qualitative-case-body">
+              <div class="video-frame">
+                <video controls muted preload="metadata" poster="static/images/Normal_Videos_925_x264_poster.jpg">
+                  <source src="static/videos/Normal_Videos_925_x264.mp4" type="video/mp4">
+                </video>
               </div>
-              <div class="judgement-card correct">
-                <div class="judgement-mark">O</div>
-                <div class="judgement-content">
-                  <h4>Environment</h4>
-                  <p class="judgement-meta">Label: 0 &nbsp; Score: 0.1</p>
-                  <p>The video shows a <strong>typical scene of a parking lot at night with cars parked and moving in and out.</strong> There is no indication of abnormal, criminal, or deviant behavior.</p>
+              <div class="judgement-stack">
+                <div class="judgement-card wrong">
+                  <div class="judgement-mark">X</div>
+                  <div class="judgement-content">
+                    <h4>Baseline</h4>
+                    <p class="judgement-meta">Label: 1 &nbsp; Score: 0.9</p>
+                    <p>The video shows a <strong>sudden and dramatic increase in brightness, likely indicating an explosion or fire, which is an abnormal event.</strong></p>
+                  </div>
+                </div>
+                <div class="judgement-card correct">
+                  <div class="judgement-mark">O</div>
+                  <div class="judgement-content">
+                    <h4>Environment</h4>
+                    <p class="judgement-meta">Label: 0 &nbsp; Score: 0.1</p>
+                    <p>The video shows a <strong>typical scene of a parking lot at night with cars parked and moving in and out.</strong> There is no indication of abnormal, criminal, or deviant behavior.</p>
+                  </div>
                 </div>
               </div>
             </div>
