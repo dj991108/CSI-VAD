@@ -1,0 +1,211 @@
+:root {
+  --primary-color: #1f5f8f;
+  --primary-hover: #153f5f;
+  --accent-color: #2b8a6e;
+  --text-primary: #17202a;
+  --text-secondary: #586574;
+  --background-secondary: #f7f9fb;
+  --background-accent: #eef4f8;
+  --border-color: #dce3ea;
+  --border-radius: 8px;
+  --border-radius-lg: 8px;
+}
+
+body {
+  background: #ffffff;
+}
+
+.publication-header .hero-body {
+  padding-top: 4rem;
+  padding-bottom: 2.25rem;
+}
+
+.publication-title {
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(2rem, 5vw, 3.85rem) !important;
+}
+
+.publication-affiliations {
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+}
+
+.publication-links {
+  margin-top: 1.35rem;
+}
+
+.coming-soon {
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
+  cursor: default;
+}
+
+.teaser .hero-body {
+  padding-top: 1.25rem;
+}
+
+.publication-figure {
+  margin: 0 auto;
+}
+
+.publication-figure img {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(20, 32, 45, 0.08);
+}
+
+.teaser-caption {
+  max-width: 900px;
+  margin: 1.25rem auto 0;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.method-cards,
+.result-cards,
+.qualitative-grid {
+  margin-top: 1.5rem;
+}
+
+.method-card {
+  height: 100%;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 20px rgba(20, 32, 45, 0.06);
+}
+
+.method-card p,
+.result-label,
+.qualitative-card figcaption,
+.qualitative-intro {
+  color: var(--text-secondary);
+}
+
+.result-card {
+  height: 100%;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(20, 32, 45, 0.06);
+}
+
+.result-value {
+  margin-bottom: 0.4rem;
+  color: var(--accent-color);
+  font-size: 2.35rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.result-label {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.result-table {
+  margin-top: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.result-table table {
+  margin-bottom: 0;
+}
+
+.result-table th {
+  color: var(--primary-hover);
+  background: var(--background-accent);
+}
+
+.qualitative-intro {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.qualitative-card {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 20px rgba(20, 32, 45, 0.06);
+}
+
+.qualitative-card img {
+  width: 100%;
+  aspect-ratio: 26 / 17;
+  object-fit: cover;
+  background: #111820;
+}
+
+.qualitative-card figcaption {
+  min-height: 4.5rem;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.qualitative-main {
+  max-width: 860px;
+  margin-top: 1.75rem;
+}
+
+.bibtex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.copy-bibtex-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.copy-bibtex-btn.copied {
+  color: #ffffff;
+  background: var(--accent-color);
+}
+
+#bibtex-code {
+  overflow-x: auto;
+  border-radius: 8px;
+  background: #111820;
+  color: #f8fafc;
+}
+
+.footer {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background: #ffffff;
+  border-top: 1px solid var(--border-color);
+}
+
+@media screen and (max-width: 768px) {
+  .publication-header .hero-body {
+    padding-top: 2.75rem;
+  }
+
+  .publication-links .button {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .qualitative-card figcaption {
+    min-height: 0;
+  }
+}

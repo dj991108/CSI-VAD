@@ -1,26 +1,51 @@
 # CSI-VAD Project Page
 
-This directory contains a static project page for:
+Static project page for:
 
 `Context-structured Video Anomaly Detection with Large Vision-Language Models`
 
-## Files
+The page is based on the Academic Project Page Template:
 
-- `index.html`: project page content.
-- `styles.css`: page styling.
-- `assets/images/`: framework, recognition module, and qualitative figures.
-- `assets/videos/`: compact GIF loops for qualitative video evidence.
-- `assets/paper/`: current paper PDF placeholder.
+https://github.com/eliahuhorwitz/Academic-project-page-template
 
-## Deployment Steps
+## Structure
 
-1. Create a public GitHub repository, for example `CSI-VAD`.
-2. Copy every file in this directory to the repository root.
-3. In the repository settings, enable GitHub Pages from the main branch root.
-4. Use the published URL in the camera-ready author block.
-5. Replace the disabled `arXiv coming soon` and `Code coming soon` buttons in `index.html` when public URLs are available.
-6. Rebuild the camera-ready PDF and zip after the project page URL is final.
+- `index.html`: CSI-VAD project page.
+- `.nojekyll`: disables Jekyll processing on GitHub Pages.
+- `static/css/`: template CSS plus `csi-vad.css` overrides.
+- `static/js/`: template JavaScript assets.
+- `static/images/`: framework, recognition module, qualitative figure, and social preview.
+- `static/videos/`: compact GIF loops for qualitative examples.
+- `static/pdfs/`: current paper PDF.
 
-## Current Known Placeholder
+## Deploy to GitHub Pages
 
-The camera-ready PDF currently contains `https://project_page_here`. Replace it with the published GitHub Pages URL before final submission.
+Copy this directory into the `docs/` folder of `dj991108/CSI-VAD`, then push:
+
+```bash
+rsync -av --delete \
+  /home1/irteam/data-vol1/Surveillance_VAD/docs/csi_vad/project_page/ \
+  /tmp/CSI-VAD/docs/
+
+cd /tmp/CSI-VAD
+git add docs
+git commit -m "Use academic project page template"
+git push origin main
+```
+
+In GitHub, set Pages to:
+
+- Source: `Deploy from a branch`
+- Branch: `main`
+- Folder: `/docs`
+
+Expected URL:
+
+https://dj991108.github.io/CSI-VAD/
+
+## Remaining Updates
+
+- Replace `arXiv coming soon` when the arXiv URL is available.
+- Replace `Code coming soon` when code release is ready.
+- Replace the temporary BibTeX entry with the final citation.
+- Update the camera-ready LaTeX URL after this page is public.

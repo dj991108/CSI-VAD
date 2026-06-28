@@ -1,148 +1,234 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CSI-VAD | Context-structured Video Anomaly Detection</title>
-    <meta
-      name="description"
-      content="Project page for Context-structured Video Anomaly Detection with Large Vision-Language Models."
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="top-nav" aria-label="Page sections">
-        <a href="#abstract">Abstract</a>
-        <a href="#method">Method</a>
-        <a href="#results">Results</a>
-        <a href="#citation">Citation</a>
-      </nav>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <section class="hero" aria-labelledby="title">
-        <p class="venue">Camera-ready project page</p>
-        <h1 id="title">
-          Context-structured Video Anomaly Detection with Large Vision-Language Models
-        </h1>
+  <meta name="title" content="CSI-VAD - Context-structured Video Anomaly Detection">
+  <meta name="description" content="CSI-VAD is a training-free video anomaly detection framework that decomposes LVLM inference into environment, object, and time contexts.">
+  <meta name="keywords" content="video anomaly detection, training-free, large vision-language models, surveillance video, context-structured inference">
+  <meta name="author" content="Dongjun Kim, Changjae Oh, Andrea Cavallaro, Jeonghoon Mo">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
 
-        <p class="authors">
-          <span>Dongjun Kim</span>
-          <span>Changjae Oh</span>
-          <span>Andrea Cavallaro</span>
-          <span>Jeonghoon Mo</span>
-        </p>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CSI-VAD Project Page">
+  <meta property="og:title" content="Context-structured Video Anomaly Detection with Large Vision-Language Models">
+  <meta property="og:description" content="Training-free video anomaly detection via environment, object, and time context decomposition.">
+  <meta property="og:url" content="https://dj991108.github.io/CSI-VAD/">
+  <meta property="og:image" content="https://dj991108.github.io/CSI-VAD/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CSI-VAD framework overview">
 
-        <p class="affiliations">
-          Yonsei University &nbsp;|&nbsp; Queen Mary University of London &nbsp;|&nbsp; EPFL
-        </p>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Context-structured Video Anomaly Detection with Large Vision-Language Models">
+  <meta name="twitter:description" content="Training-free video anomaly detection via environment, object, and time context decomposition.">
+  <meta name="twitter:image" content="https://dj991108.github.io/CSI-VAD/static/images/social_preview.png">
 
-        <div class="links" aria-label="Project links">
-          <a class="link-button primary" href="assets/paper/csi_vad_camera_ready_0626.pdf">Paper PDF</a>
-          <span class="link-button disabled" aria-disabled="true">arXiv coming soon</span>
-          <span class="link-button disabled" aria-disabled="true">Code coming soon</span>
+  <meta name="citation_title" content="Context-structured Video Anomaly Detection with Large Vision-Language Models">
+  <meta name="citation_author" content="Kim, Dongjun">
+  <meta name="citation_author" content="Oh, Changjae">
+  <meta name="citation_author" content="Cavallaro, Andrea">
+  <meta name="citation_author" content="Mo, Jeonghoon">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://dj991108.github.io/CSI-VAD/static/pdfs/csi_vad_camera_ready_0626.pdf">
+
+  <title>CSI-VAD | Context-structured Video Anomaly Detection</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/csi-vad.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Context-structured Video Anomaly Detection with Large Vision-Language Models",
+    "description": "CSI-VAD is a training-free video anomaly detection framework that decomposes holistic LVLM inference into environment, object, and time contexts.",
+    "author": [
+      {"@type": "Person", "name": "Dongjun Kim", "affiliation": {"@type": "Organization", "name": "Yonsei University"}},
+      {"@type": "Person", "name": "Changjae Oh", "affiliation": {"@type": "Organization", "name": "Queen Mary University of London"}},
+      {"@type": "Person", "name": "Andrea Cavallaro", "affiliation": {"@type": "Organization", "name": "EPFL"}},
+      {"@type": "Person", "name": "Jeonghoon Mo", "affiliation": {"@type": "Organization", "name": "Yonsei University"}}
+    ],
+    "datePublished": "2026",
+    "url": "https://dj991108.github.io/CSI-VAD/",
+    "image": "https://dj991108.github.io/CSI-VAD/static/images/social_preview.png",
+    "keywords": ["video anomaly detection", "training-free inference", "large vision-language models", "surveillance video"],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+
+<body>
+  <main id="main-content">
+    <section class="hero publication-header">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                Context-structured Video Anomaly Detection with Large Vision-Language Models
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Dongjun Kim<sup>1</sup></span>
+                <span class="author-block">Changjae Oh<sup>2</sup></span>
+                <span class="author-block">Andrea Cavallaro<sup>3</sup></span>
+                <span class="author-block">Jeonghoon Mo<sup>1,*</sup></span>
+              </div>
+
+              <div class="is-size-6 publication-authors publication-affiliations">
+                <span class="author-block"><sup>1</sup>Yonsei University</span>
+                <span class="author-block"><sup>2</sup>Queen Mary University of London</span>
+                <span class="author-block"><sup>3</sup>EPFL</span>
+                <span class="author-block"><sup>*</sup>Corresponding author</span>
+              </div>
+
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="static/pdfs/csi_vad_camera_ready_0626.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <span class="button is-normal is-rounded is-light coming-soon">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv coming soon</span>
+                  </span>
+                </span>
+                <span class="link-block">
+                  <span class="button is-normal is-rounded is-light coming-soon">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code coming soon</span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <figure class="teaser">
-          <img src="assets/images/framework.png" alt="Overview of the CSI-VAD framework" />
-          <figcaption>
-            CSI-VAD decomposes training-free video anomaly inference into environment,
-            object, and time contexts, then aggregates context-level decisions.
-          </figcaption>
+    <section class="hero teaser">
+      <div class="container is-max-widescreen">
+        <div class="hero-body">
+          <figure class="publication-figure">
+            <img src="static/images/framework.png" alt="Overview of the proposed CSI-VAD framework" loading="eager">
+          </figure>
+          <h2 class="subtitle has-text-centered teaser-caption">
+            CSI-VAD replaces single-step holistic anomaly inference with context-structured inference over
+            environment, object, and time cues.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Training video anomaly detectors is challenging due to the difficulty and cost of annotating
+                diverse and rare abnormal events. Although recent large vision-language models enable
+                training-free inference, existing approaches mostly rely on holistic inference over sampled
+                video and may miss context-specific anomaly cues. We present CSI-VAD, a training-free video
+                anomaly detector that identifies abnormal events across diverse contexts. The key idea is to
+                decompose each video into three distinct contexts: environment, objects, and time. Because
+                anomaly judgments are grounded solely in context-specific visual cues, CSI-VAD does not
+                require predefined text prompts describing abnormal events or dataset-specific tuning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+        <figure class="publication-figure">
+          <img src="static/images/recognition_modules.png" alt="CSI-VAD recognition modules" loading="lazy">
         </figure>
-      </section>
-    </header>
 
-    <main>
-      <section id="abstract" class="section">
-        <h2>Abstract</h2>
-        <p>
-          Training video anomaly detectors is challenging due to the difficulty
-          and cost of annotating diverse and rare abnormal events. Although
-          recent large vision-language models enable training-free inference,
-          existing approaches mostly rely on holistic inference over sampled
-          video and may miss context-specific anomaly cues. We present CSI-VAD,
-          a training-free video anomaly detector that identifies abnormal events
-          across diverse contexts. The key idea is to decompose each video into
-          three distinct contexts: environment, objects, and time. Experiments
-          on UCF-Crime and UBnormal show that CSI-VAD consistently improves
-          over the direct holistic baseline and achieves competitive performance
-          against existing methods.
-        </p>
-      </section>
+        <div class="columns method-cards">
+          <div class="column">
+            <article class="box method-card">
+              <h3 class="title is-5">Environment Context</h3>
+              <p>
+                Three representative keyframes are summarized by an LVLM to capture place, daytime,
+                environment type, and the typical situation implied by the scene.
+              </p>
+            </article>
+          </div>
+          <div class="column">
+            <article class="box method-card">
+              <h3 class="title is-5">Object Context</h3>
+              <p>
+                Detection and tracking overlays emphasize object locations, motion, and interactions while
+                preserving the original scene appearance.
+              </p>
+            </article>
+          </div>
+          <div class="column">
+            <article class="box method-card">
+              <h3 class="title is-5">Time Context</h3>
+              <p>
+                Caption embeddings are segmented by sustained semantic changes and summarized into
+                ordered event states for temporal reasoning.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="method" class="section">
-        <div class="section-heading">
-          <h2>Method</h2>
-          <p>
-            Each branch isolates a different source of anomaly evidence before
-            the final score and label aggregation.
-          </p>
+    <section class="section hero is-light">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+        <div class="columns result-cards">
+          <div class="column">
+            <div class="box result-card">
+              <p class="result-value">92.90</p>
+              <p class="result-label">UCF-Crime AUC, Mean Ensemble, 256 frames</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box result-card">
+              <p class="result-value">92.88</p>
+              <p class="result-label">UCF-Crime AUC, Noisy-OR, 256 frames</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box result-card">
+              <p class="result-value">86.08</p>
+              <p class="result-label">UCF-Crime AUC under the recent protocol</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box result-card">
+              <p class="result-value">72.16</p>
+              <p class="result-label">UBnormal AUC, 32-frame setting</p>
+            </div>
+          </div>
         </div>
 
-        <figure class="wide-figure">
-          <img src="assets/images/recognition_modules.png" alt="Recognition modules for environment, object, and time contexts" />
-          <figcaption>
-            Recognition modules construct scene-level priors, object-centric
-            tracking overlays, and event-aware temporal summaries.
-          </figcaption>
-        </figure>
-
-        <div class="method-grid">
-          <article>
-            <h3>Environment Context</h3>
-            <p>
-              A multi-image LVLM summarizes representative keyframes to capture
-              place, daytime, environment type, and typical scene affordances.
-            </p>
-          </article>
-          <article>
-            <h3>Object Context</h3>
-            <p>
-              Detection and tracking overlays emphasize object locations,
-              motion, and interactions while preserving the original scene.
-            </p>
-          </article>
-          <article>
-            <h3>Time Context</h3>
-            <p>
-              Frame captions are segmented by semantic change and summarized
-              into an ordered sequence of event states.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="results" class="section">
-        <div class="section-heading">
-          <h2>Results</h2>
-          <p>
-            Context-structured inference improves over direct holistic LVLM
-            inference across sampling budgets and evaluation protocols.
-          </p>
-        </div>
-
-        <div class="metrics-grid" aria-label="Key quantitative results">
-          <article class="metric">
-            <p class="metric-value">92.90</p>
-            <p class="metric-label">UCF-Crime AUC, Mean Ensemble, 256 frames</p>
-          </article>
-          <article class="metric">
-            <p class="metric-value">92.88</p>
-            <p class="metric-label">UCF-Crime AUC, Noisy-OR, 256 frames</p>
-          </article>
-          <article class="metric">
-            <p class="metric-value">86.08</p>
-            <p class="metric-label">UCF-Crime AUC under the recent protocol</p>
-          </article>
-          <article class="metric">
-            <p class="metric-value">72.16</p>
-            <p class="metric-label">UBnormal AUC, 32 frames</p>
-          </article>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <caption>Video-level AUC-ROC on UCF-Crime and UBnormal.</caption>
+        <div class="table-container result-table">
+          <table class="table is-striped is-hoverable is-fullwidth">
             <thead>
               <tr>
                 <th>Dataset</th>
@@ -189,62 +275,105 @@
             </tbody>
           </table>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section">
-        <div class="section-heading">
-          <h2>Qualitative Video Evidence</h2>
-          <p>
-            The examples below mirror the qualitative cases in the paper:
-            time, object, and environment branches correct different holistic
-            inference failures, while a brief missed event remains challenging.
-          </p>
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Qualitative Video Evidence</h2>
+        <p class="subtitle has-text-centered qualitative-intro">
+          The context branches address different holistic inference failures. The final case shows a limitation
+          when sparse sampling misses a brief abnormal moment.
+        </p>
+
+        <div class="columns is-multiline qualitative-grid">
+          <div class="column is-half-tablet is-one-quarter-desktop">
+            <figure class="box qualitative-card">
+              <img src="static/videos/fighting_time.gif" alt="Fighting example for time context" loading="lazy">
+              <figcaption>Time context captures event progression.</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half-tablet is-one-quarter-desktop">
+            <figure class="box qualitative-card">
+              <img src="static/videos/shoplifting_object_overlay.gif" alt="Shoplifting example with object tracking overlay" loading="lazy">
+              <figcaption>Object context highlights shelf interaction.</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half-tablet is-one-quarter-desktop">
+            <figure class="box qualitative-card">
+              <img src="static/videos/parking_environment.gif" alt="Parking lot normal example for environment context" loading="lazy">
+              <figcaption>Environment context suppresses spurious cues.</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half-tablet is-one-quarter-desktop">
+            <figure class="box qualitative-card">
+              <img src="static/videos/abuse_failure.gif" alt="Representative failure case" loading="lazy">
+              <figcaption>Brief missed events remain challenging.</figcaption>
+            </figure>
+          </div>
         </div>
 
-        <div class="video-grid">
-          <figure>
-            <img src="assets/videos/fighting_time.gif" alt="Sampled frames from a fighting example" />
-            <figcaption>Time context captures event progression in a fighting case.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/videos/shoplifting_object_overlay.gif" alt="Object tracking overlay for a shoplifting example" />
-            <figcaption>Object context highlights fine-grained shelf interaction.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/videos/parking_environment.gif" alt="Sampled frames from a night parking lot example" />
-            <figcaption>Environment context suppresses a spurious brightness cue.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/videos/abuse_failure.gif" alt="Sampled frames from a representative failure case" />
-            <figcaption>Sparse sampling can still miss short abnormal moments.</figcaption>
-          </figure>
-        </div>
-
-        <figure class="qualitative-figure">
-          <img src="assets/images/qualitative_evaluation.jpg" alt="Qualitative evaluation examples from UCF-Crime" />
-          <figcaption>
-            Qualitative examples from UCF-Crime comparing holistic baseline
-            decisions with context-specific CSI-VAD branches.
-          </figcaption>
+        <figure class="publication-figure qualitative-main">
+          <img src="static/images/qualitative_evaluation.jpg" alt="Qualitative evaluation examples from UCF-Crime" loading="lazy">
         </figure>
-      </section>
+      </div>
+    </section>
 
-      <section id="citation" class="section citation">
-        <h2>Citation</h2>
-        <p>The BibTeX entry will be updated when the public paper record is available.</p>
-        <pre><code>@article{kim2026csivad,
+    <section class="section hero is-light" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{kim2026csivad,
   title  = {Context-structured Video Anomaly Detection with Large Vision-Language Models},
   author = {Kim, Dongjun and Oh, Changjae and Cavallaro, Andrea and Mo, Jeonghoon},
-  year   = {2026}
+  year   = {2026},
+  url    = {https://dj991108.github.io/CSI-VAD/}
 }</code></pre>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <footer class="footer">
-      <p>
-        This page is adapted for the CSI-VAD project and can be hosted with
-        GitHub Pages.
-      </p>
-    </footer>
-  </body>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>
+              which was adopted from the
+              <a href="https://nerfies.github.io" target="_blank">Nerfies</a>
+              project page. You are free to borrow the source code of this website, we just ask that you link back to this page in the footer.
+              <br>
+              This website is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function copyBibTeX() {
+      const bibtexElement = document.getElementById('bibtex-code');
+      const button = document.querySelector('.copy-bibtex-btn');
+      const copyText = button.querySelector('.copy-text');
+      if (!bibtexElement) return;
+      navigator.clipboard.writeText(bibtexElement.textContent).then(function() {
+        button.classList.add('copied');
+        copyText.textContent = 'Copied';
+        setTimeout(function() {
+          button.classList.remove('copied');
+          copyText.textContent = 'Copy';
+        }, 1600);
+      });
+    }
+  </script>
+</body>
 </html>
