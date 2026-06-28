@@ -24,7 +24,8 @@ body {
   max-width: 1050px;
   margin-left: auto;
   margin-right: auto;
-  font-size: clamp(2rem, 5vw, 3.85rem) !important;
+  font-size: clamp(1.85rem, 4.2vw, 3.15rem) !important;
+  line-height: 1.12 !important;
 }
 
 .publication-affiliations {
@@ -36,10 +37,13 @@ body {
   margin-top: 1.35rem;
 }
 
-.coming-soon {
-  color: var(--text-secondary) !important;
-  border: 1px solid var(--border-color) !important;
-  box-shadow: none !important;
+.publication-links .button {
+  min-width: 7rem;
+  border-radius: 999px !important;
+}
+
+.inactive-link {
+  opacity: 0.92;
   cursor: default;
 }
 
@@ -59,6 +63,15 @@ body {
   box-shadow: 0 8px 24px rgba(20, 32, 45, 0.08);
 }
 
+.figure-caption {
+  max-width: 980px;
+  margin: 0.85rem auto 0;
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
 .teaser-caption {
   max-width: 900px;
   margin: 1.25rem auto 0;
@@ -67,7 +80,7 @@ body {
 }
 
 .method-cards,
-.result-cards,
+.quantitative-tables,
 .qualitative-grid {
   margin-top: 1.5rem;
 }
@@ -85,41 +98,42 @@ body {
   color: var(--text-secondary);
 }
 
-.result-card {
+.paper-table {
   height: 100%;
   border: 1px solid var(--border-color);
-  text-align: center;
   box-shadow: 0 8px 20px rgba(20, 32, 45, 0.06);
 }
 
-.result-value {
-  margin-bottom: 0.4rem;
-  color: var(--accent-color);
-  font-size: 2.35rem;
-  font-weight: 800;
-  line-height: 1;
+.paper-table .table {
+  margin-bottom: 0;
+  font-size: 0.92rem;
 }
 
-.result-label {
-  margin-bottom: 0;
+.paper-table th {
+  color: var(--primary-hover);
+  background: var(--background-accent);
+}
+
+.paper-table td,
+.paper-table th {
+  vertical-align: middle;
+}
+
+.table-title {
+  margin-bottom: 0.8rem;
+  color: var(--text-primary);
   font-size: 0.95rem;
+  font-weight: 700;
   line-height: 1.35;
 }
 
-.result-table {
-  margin-top: 1.25rem;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: #ffffff;
+.ours-row {
+  background: #fbfdfc;
 }
 
-.result-table table {
-  margin-bottom: 0;
-}
-
-.result-table th {
-  color: var(--primary-hover);
-  background: var(--background-accent);
+.second-best {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
 }
 
 .qualitative-intro {

@@ -32,7 +32,6 @@
   <meta name="citation_author" content="Cavallaro, Andrea">
   <meta name="citation_author" content="Mo, Jeonghoon">
   <meta name="citation_publication_date" content="2026">
-  <meta name="citation_pdf_url" content="https://dj991108.github.io/CSI-VAD/static/pdfs/csi_vad_camera_ready_0626.pdf">
 
   <title>CSI-VAD | Context-structured Video Anomaly Detection</title>
 
@@ -83,55 +82,34 @@
               </h1>
 
               <div class="is-size-5 publication-authors">
-                <span class="author-block">Dongjun Kim<sup>1</sup></span>
-                <span class="author-block">Changjae Oh<sup>2</sup></span>
-                <span class="author-block">Andrea Cavallaro<sup>3</sup></span>
-                <span class="author-block">Jeonghoon Mo<sup>1,*</sup></span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=e6shGrQAAAAJ&amp;hl=ko" target="_blank">Dongjun Kim</a><sup>1</sup></span>
+                <span class="author-block"><a href="https://cj-oh.github.io/" target="_blank">Changjae Oh</a><sup>2</sup></span>
+                <span class="author-block"><a href="https://people.epfl.ch/andrea.cavallaro/?lang=en" target="_blank">Andrea Cavallaro</a><sup>3</sup></span>
+                <span class="author-block"><a href="https://sites.google.com/yonsei.ac.kr/jhmo-yonsei" target="_blank">Jeonghoon Mo</a><sup>1</sup></span>
               </div>
 
               <div class="is-size-6 publication-authors publication-affiliations">
                 <span class="author-block"><sup>1</sup>Yonsei University</span>
                 <span class="author-block"><sup>2</sup>Queen Mary University of London</span>
                 <span class="author-block"><sup>3</sup>EPFL</span>
-                <span class="author-block"><sup>*</sup>Corresponding author</span>
               </div>
 
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="static/pdfs/csi_vad_camera_ready_0626.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                    <span>Paper</span>
+                  <a href="https://github.com/dj991108/CSI-VAD" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <span class="button is-normal is-rounded is-light coming-soon">
+                  <span class="button is-normal is-rounded is-dark inactive-link" title="arXiv coming soon">
                     <span class="icon"><i class="ai ai-arxiv"></i></span>
-                    <span>arXiv coming soon</span>
-                  </span>
-                </span>
-                <span class="link-block">
-                  <span class="button is-normal is-rounded is-light coming-soon">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>Code coming soon</span>
+                    <span>arXiv</span>
                   </span>
                 </span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="hero teaser">
-      <div class="container is-max-widescreen">
-        <div class="hero-body">
-          <figure class="publication-figure">
-            <img src="static/images/framework.png" alt="Overview of the proposed CSI-VAD framework" loading="eager">
-          </figure>
-          <h2 class="subtitle has-text-centered teaser-caption">
-            CSI-VAD replaces single-step holistic anomaly inference with context-structured inference over
-            environment, object, and time cues.
-          </h2>
         </div>
       </div>
     </section>
@@ -146,11 +124,15 @@
                 Training video anomaly detectors is challenging due to the difficulty and cost of annotating
                 diverse and rare abnormal events. Although recent large vision-language models enable
                 training-free inference, existing approaches mostly rely on holistic inference over sampled
-                video and may miss context-specific anomaly cues. We present CSI-VAD, a training-free video
-                anomaly detector that identifies abnormal events across diverse contexts. The key idea is to
-                decompose each video into three distinct contexts: environment, objects, and time. Because
-                anomaly judgments are grounded solely in context-specific visual cues, CSI-VAD does not
-                require predefined text prompts describing abnormal events or dataset-specific tuning.
+                video and may miss context specific anomaly cues. In this paper, we present CSI-VAD, a
+                training-free video anomaly detector that identifies abnormal events across diverse contexts.
+                The key idea is to decompose each video into three distinct contexts (environment, objects,
+                time) and perform context-specific inference in separate branches. Because we ground anomaly
+                judgments solely in context-specific visual cues, we do not require predefined text prompts
+                describing abnormal events or dataset-specific tuning. Experiments on UCF-Crime and
+                UBnormal show that CSI-VAD consistently improves over the direct holistic baseline and
+                achieves competitive performance against existing methods, showing the advantage of
+                structured context decomposition for training-free video anomaly detection.
               </p>
             </div>
           </div>
@@ -160,36 +142,58 @@
 
     <section class="section">
       <div class="container is-max-widescreen">
-        <h2 class="title is-3 has-text-centered">Method</h2>
+        <h2 class="title is-3 has-text-centered">CSI-VAD Framework</h2>
+        <figure class="publication-figure">
+          <img src="static/images/framework.png" alt="Overview of the proposed CSI-VAD framework" loading="eager">
+          <figcaption class="figure-caption">
+            <strong>Fig. 1. Overview of the proposed CSI-VAD framework.</strong>
+            We extract environment (<i>C</i><sub>e</sub>), object (<i>C</i><sub>o</sub>), and time
+            (<i>C</i><sub>t</sub>) contexts from an input video <i>V</i>. Each context is then
+            independently processed by an LVLM/LLM to produce a label <i>y</i><sub>(&middot;)</sub>,
+            anomaly score <i>s</i><sub>(&middot;)</sub>, and explanation <i>e</i><sub>(&middot;)</sub>, and
+            the outputs are combined for the final video-level prediction.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Recognition Modules</h2>
         <figure class="publication-figure">
           <img src="static/images/recognition_modules.png" alt="CSI-VAD recognition modules" loading="lazy">
+          <figcaption class="figure-caption">
+            <strong>Fig. 2. Recognition modules.</strong>
+            The framework captures environment, object, and time contexts via three dedicated modules
+            <i>&Phi;</i><sub>(&middot;)</sub>.
+          </figcaption>
         </figure>
 
         <div class="columns method-cards">
           <div class="column">
             <article class="box method-card">
-              <h3 class="title is-5">Environment Context</h3>
+              <h3 class="title is-5">Environment Context <span><i>C</i><sub>e</sub></span></h3>
               <p>
-                Three representative keyframes are summarized by an LVLM to capture place, daytime,
-                environment type, and the typical situation implied by the scene.
+                A scene-level context that describes the spatial prior of the video, including the place,
+                daytime, environment type, and typical situation expected from the visible scene.
               </p>
             </article>
           </div>
           <div class="column">
             <article class="box method-card">
-              <h3 class="title is-5">Object Context</h3>
+              <h3 class="title is-5">Object Context <span><i>C</i><sub>o</sub></span></h3>
               <p>
-                Detection and tracking overlays emphasize object locations, motion, and interactions while
-                preserving the original scene appearance.
+                An object-emphasized visual sequence composed of original frames with tracking overlays,
+                making object identity, location, motion, and interactions explicit.
               </p>
             </article>
           </div>
           <div class="column">
             <article class="box method-card">
-              <h3 class="title is-5">Time Context</h3>
+              <h3 class="title is-5">Time Context <span><i>C</i><sub>t</sub></span></h3>
               <p>
-                Caption embeddings are segmented by sustained semantic changes and summarized into
-                ordered event states for temporal reasoning.
+                An ordered textual summary of semantically coherent event segments, where each segment
+                is represented by a concise scene state for temporal anomaly reasoning.
               </p>
             </article>
           </div>
@@ -200,87 +204,72 @@
     <section class="section hero is-light">
       <div class="container is-max-widescreen">
         <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
-        <div class="columns result-cards">
-          <div class="column">
-            <div class="box result-card">
-              <p class="result-value">92.90</p>
-              <p class="result-label">UCF-Crime AUC, Mean Ensemble, 256 frames</p>
+        <div class="columns quantitative-tables">
+          <div class="column is-7">
+            <div class="box paper-table">
+              <p class="table-title">
+                Table I. Representative existing video-level anomaly detection methods on UCF-Crime.
+              </p>
+              <div class="table-container">
+                <table class="table is-striped is-hoverable is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th>Method</th>
+                      <th>Training-Free</th>
+                      <th>AUC-ROC (%)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Sultani et al. (I3D)</td><td>&times;</td><td>77.92</td></tr>
+                    <tr><td>RTFM (I3D)</td><td>&times;</td><td>84.03</td></tr>
+                    <tr><td>S3R (I3D)</td><td>&times;</td><td>85.99</td></tr>
+                    <tr><td>MGFN (I3D)</td><td>&times;</td><td>86.98</td></tr>
+                    <tr><td>PEL (I3D)</td><td>&times;</td><td>86.76</td></tr>
+                    <tr><td>BN-WVAD (I3D)</td><td>&times;</td><td>87.24</td></tr>
+                    <tr><td>Anomaly Scorer (Base, X3D)</td><td>&times;</td><td>91.34</td></tr>
+                    <tr><td>DUAL VAD</td><td>&times;</td><td>92.33</td></tr>
+                    <tr class="ours-row"><td>Ours<sub>256</sub> (Max Ensemble)</td><td>&#10003;</td><td>89.33</td></tr>
+                    <tr class="ours-row"><td>Ours<sub>256</sub> (Mean Ensemble)</td><td>&#10003;</td><td><strong>92.90</strong></td></tr>
+                    <tr class="ours-row"><td>Ours<sub>256</sub> (Noisy-OR)</td><td>&#10003;</td><td><span class="second-best">92.88</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-          <div class="column">
-            <div class="box result-card">
-              <p class="result-value">92.88</p>
-              <p class="result-label">UCF-Crime AUC, Noisy-OR, 256 frames</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="box result-card">
-              <p class="result-value">86.08</p>
-              <p class="result-label">UCF-Crime AUC under the recent protocol</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="box result-card">
-              <p class="result-value">72.16</p>
-              <p class="result-label">UBnormal AUC, 32-frame setting</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="table-container result-table">
-          <table class="table is-striped is-hoverable is-fullwidth">
-            <thead>
-              <tr>
-                <th>Dataset</th>
-                <th>Frames</th>
-                <th>Baseline</th>
-                <th>Ours Max</th>
-                <th>Ours Mean</th>
-                <th>Ours Noisy-OR</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>UCF-Crime</td>
-                <td>32</td>
-                <td>81.50</td>
-                <td>88.49</td>
-                <td>89.04</td>
-                <td><strong>89.08</strong></td>
-              </tr>
-              <tr>
-                <td>UCF-Crime</td>
-                <td>256</td>
-                <td>88.39</td>
-                <td>89.33</td>
-                <td><strong>92.90</strong></td>
-                <td>92.88</td>
-              </tr>
-              <tr>
-                <td>UBnormal</td>
-                <td>32</td>
-                <td>59.19</td>
-                <td>70.52</td>
-                <td><strong>72.16</strong></td>
-                <td><strong>72.16</strong></td>
-              </tr>
-              <tr>
-                <td>UBnormal</td>
-                <td>256</td>
-                <td>58.66</td>
-                <td>68.75</td>
-                <td><strong>71.56</strong></td>
-                <td><strong>71.56</strong></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="column is-5">
+            <div class="box paper-table">
+              <p class="table-title">
+                Table II. Recent VAD methods on UCF-Crime under the prior evaluation protocol.
+              </p>
+              <div class="table-container">
+                <table class="table is-striped is-hoverable is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th>Method</th>
+                      <th>Training-Free</th>
+                      <th>AUC-ROC (%)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>LAVAD</td><td>&#10003;</td><td>77.19</td></tr>
+                    <tr><td>VERA</td><td>&times;</td><td>64.60</td></tr>
+                    <tr><td>PEL4VAD</td><td>&times;</td><td><strong>87.31</strong></td></tr>
+                    <tr class="ours-row"><td>Ours (Max Ensemble)</td><td>&#10003;</td><td>85.48</td></tr>
+                    <tr class="ours-row"><td>Ours (Mean Ensemble)</td><td>&#10003;</td><td>85.96</td></tr>
+                    <tr class="ours-row"><td>Ours (Noisy-OR)</td><td>&#10003;</td><td><span class="second-best">86.08</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container is-max-widescreen">
-        <h2 class="title is-3 has-text-centered">Qualitative Video Evidence</h2>
+        <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
         <p class="subtitle has-text-centered qualitative-intro">
           The context branches address different holistic inference failures. The final case shows a limitation
           when sparse sampling misses a brief abnormal moment.
