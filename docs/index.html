@@ -96,15 +96,15 @@
 
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://github.com/dj991108/CSI-VAD" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
                   <span class="button is-normal is-rounded is-dark inactive-link" title="arXiv coming soon">
                     <span class="icon"><i class="ai ai-arxiv"></i></span>
-                    <span>arXiv</span>
+                    <span>arXiv <span class="soon-text">(coming soon)</span></span>
+                  </span>
+                </span>
+                <span class="link-block">
+                  <span class="button is-normal is-rounded is-dark inactive-link" title="Code coming soon">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code <span class="soon-text">(coming soon)</span></span>
                   </span>
                 </span>
               </div>
@@ -204,64 +204,35 @@
     <section class="section hero is-light">
       <div class="container is-max-widescreen">
         <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
-        <div class="columns quantitative-tables">
-          <div class="column is-7">
-            <div class="box paper-table">
-              <p class="table-title">
-                Table I. Representative existing video-level anomaly detection methods on UCF-Crime.
-              </p>
-              <div class="table-container">
-                <table class="table is-striped is-hoverable is-fullwidth">
-                  <thead>
-                    <tr>
-                      <th>Method</th>
-                      <th>Training-Free</th>
-                      <th>AUC-ROC (%)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>Sultani et al. (I3D)</td><td>&times;</td><td>77.92</td></tr>
-                    <tr><td>RTFM (I3D)</td><td>&times;</td><td>84.03</td></tr>
-                    <tr><td>S3R (I3D)</td><td>&times;</td><td>85.99</td></tr>
-                    <tr><td>MGFN (I3D)</td><td>&times;</td><td>86.98</td></tr>
-                    <tr><td>PEL (I3D)</td><td>&times;</td><td>86.76</td></tr>
-                    <tr><td>BN-WVAD (I3D)</td><td>&times;</td><td>87.24</td></tr>
-                    <tr><td>Anomaly Scorer (Base, X3D)</td><td>&times;</td><td>91.34</td></tr>
-                    <tr><td>DUAL VAD</td><td>&times;</td><td>92.33</td></tr>
-                    <tr class="ours-row"><td>Ours<sub>256</sub> (Max Ensemble)</td><td>&#10003;</td><td>89.33</td></tr>
-                    <tr class="ours-row"><td>Ours<sub>256</sub> (Mean Ensemble)</td><td>&#10003;</td><td><strong>92.90</strong></td></tr>
-                    <tr class="ours-row"><td>Ours<sub>256</sub> (Noisy-OR)</td><td>&#10003;</td><td><span class="second-best">92.88</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-
-          <div class="column is-5">
-            <div class="box paper-table">
-              <p class="table-title">
-                Table II. Recent VAD methods on UCF-Crime under the prior evaluation protocol.
-              </p>
-              <div class="table-container">
-                <table class="table is-striped is-hoverable is-fullwidth">
-                  <thead>
-                    <tr>
-                      <th>Method</th>
-                      <th>Training-Free</th>
-                      <th>AUC-ROC (%)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>LAVAD</td><td>&#10003;</td><td>77.19</td></tr>
-                    <tr><td>VERA</td><td>&times;</td><td>64.60</td></tr>
-                    <tr><td>PEL4VAD</td><td>&times;</td><td><strong>87.31</strong></td></tr>
-                    <tr class="ours-row"><td>Ours (Max Ensemble)</td><td>&#10003;</td><td>85.48</td></tr>
-                    <tr class="ours-row"><td>Ours (Mean Ensemble)</td><td>&#10003;</td><td>85.96</td></tr>
-                    <tr class="ours-row"><td>Ours (Noisy-OR)</td><td>&#10003;</td><td><span class="second-best">86.08</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+        <p class="table-caption">
+          Performance comparison with representative existing video-level anomaly detection methods on UCF-Crime.
+          Results for prior methods are taken from their original publications and follow their respective
+          evaluation protocols.
+        </p>
+        <div class="box paper-table">
+          <div class="table-container">
+            <table class="table is-hoverable is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Training-Free</th>
+                  <th>AUC-ROC (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Sultani et al. (I3D)</td><td>&times;</td><td>77.92</td></tr>
+                <tr><td>RTFM (I3D)</td><td>&times;</td><td>84.03</td></tr>
+                <tr><td>S3R (I3D)</td><td>&times;</td><td>85.99</td></tr>
+                <tr><td>MGFN (I3D)</td><td>&times;</td><td>86.98</td></tr>
+                <tr><td>PEL (I3D)</td><td>&times;</td><td>86.76</td></tr>
+                <tr><td>BN-WVAD (I3D)</td><td>&times;</td><td>87.24</td></tr>
+                <tr><td>Anomaly Scorer (Base, X3D)</td><td>&times;</td><td>91.34</td></tr>
+                <tr><td>DUAL VAD</td><td>&times;</td><td>92.33</td></tr>
+                <tr class="ours-row"><td>Ours<sub>256</sub> (Max Ensemble)</td><td>&#10003;</td><td>89.33</td></tr>
+                <tr class="ours-row"><td>Ours<sub>256</sub> (Mean Ensemble)</td><td>&#10003;</td><td><strong>92.90</strong></td></tr>
+                <tr class="ours-row"><td>Ours<sub>256</sub> (Noisy-OR)</td><td>&#10003;</td><td><em>92.88</em></td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -271,58 +242,85 @@
       <div class="container is-max-widescreen">
         <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
         <p class="subtitle has-text-centered qualitative-intro">
-          The context branches address different holistic inference failures. The final case shows a limitation
-          when sparse sampling misses a brief abnormal moment.
+          The context branches address different holistic inference failures.
         </p>
 
-        <div class="columns is-multiline qualitative-grid">
-          <div class="column is-half-tablet is-one-quarter-desktop">
-            <figure class="box qualitative-card">
-              <img src="static/videos/fighting_time.gif" alt="Fighting example for time context" loading="lazy">
-              <figcaption>Time context captures event progression.</figcaption>
-            </figure>
-          </div>
-          <div class="column is-half-tablet is-one-quarter-desktop">
-            <figure class="box qualitative-card">
-              <img src="static/videos/shoplifting_object_overlay.gif" alt="Shoplifting example with object tracking overlay" loading="lazy">
-              <figcaption>Object context highlights shelf interaction.</figcaption>
-            </figure>
-          </div>
-          <div class="column is-half-tablet is-one-quarter-desktop">
-            <figure class="box qualitative-card">
-              <img src="static/videos/parking_environment.gif" alt="Parking lot normal example for environment context" loading="lazy">
-              <figcaption>Environment context suppresses spurious cues.</figcaption>
-            </figure>
-          </div>
-          <div class="column is-half-tablet is-one-quarter-desktop">
-            <figure class="box qualitative-card">
-              <img src="static/videos/abuse_failure.gif" alt="Representative failure case" loading="lazy">
-              <figcaption>Brief missed events remain challenging.</figcaption>
-            </figure>
-          </div>
-        </div>
+        <div class="qualitative-cases">
+          <article class="qualitative-case">
+            <video controls muted preload="metadata" poster="static/images/Fighting003_x264_poster.jpg">
+              <source src="static/videos/Fighting003_x264.mp4" type="video/mp4">
+            </video>
+            <h3>Fighting003_x264</h3>
+            <div class="judgement-grid">
+              <div class="judgement-card wrong">
+                <div class="judgement-mark">X</div>
+                <div class="judgement-content">
+                  <h4>Baseline</h4>
+                  <p class="judgement-meta">Label: 0 &nbsp; Score: 0.1</p>
+                  <p>The video depicts a typical scene in a subway station with people walking and using the turnstiles. <strong>There is no indication of abnormal, criminal, or deviant behavior.</strong></p>
+                </div>
+              </div>
+              <div class="judgement-card correct">
+                <div class="judgement-mark">O</div>
+                <div class="judgement-content">
+                  <h4>Time</h4>
+                  <p class="judgement-meta">Label: 1 &nbsp; Score: 0.8</p>
+                  <p><strong>The presence of a physical altercation</strong>, a person being forcibly removed by security, and a person running through the station while others assist a fallen individual suggest abnormal and potentially criminal behavior.</p>
+                </div>
+              </div>
+            </div>
+          </article>
 
-        <figure class="publication-figure qualitative-main">
-          <img src="static/images/qualitative_evaluation.jpg" alt="Qualitative evaluation examples from UCF-Crime" loading="lazy">
-        </figure>
-      </div>
-    </section>
+          <article class="qualitative-case">
+            <video controls muted preload="metadata" poster="static/images/Shoplifting001_x264_poster.jpg">
+              <source src="static/videos/Shoplifting001_x264.mp4" type="video/mp4">
+            </video>
+            <h3>Shoplifting001_x264</h3>
+            <div class="judgement-grid">
+              <div class="judgement-card wrong">
+                <div class="judgement-mark">X</div>
+                <div class="judgement-content">
+                  <h4>Baseline</h4>
+                  <p class="judgement-meta">Label: 0 &nbsp; Score: 0.1</p>
+                  <p>The video shows a typical retail environment with customers browsing and interacting with store staff. <strong>There is no indication of abnormal, criminal, or deviant behavior.</strong></p>
+                </div>
+              </div>
+              <div class="judgement-card correct">
+                <div class="judgement-mark">O</div>
+                <div class="judgement-content">
+                  <h4>Object</h4>
+                  <p class="judgement-meta">Label: 1 &nbsp; Score: 0.9</p>
+                  <p>The video captures a <strong>theft scenario where an individual in an orange shirt is seen taking items from a store shelf without paying</strong>, which is considered criminal behavior.</p>
+                </div>
+              </div>
+            </div>
+          </article>
 
-    <section class="section hero is-light" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <div class="bibtex-header">
-          <h2 class="title">BibTeX</h2>
-          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-            <i class="fas fa-copy"></i>
-            <span class="copy-text">Copy</span>
-          </button>
+          <article class="qualitative-case">
+            <video controls muted preload="metadata" poster="static/images/Normal_Videos_925_x264_poster.jpg">
+              <source src="static/videos/Normal_Videos_925_x264.mp4" type="video/mp4">
+            </video>
+            <h3>Normal_Videos_925_x264</h3>
+            <div class="judgement-grid">
+              <div class="judgement-card wrong">
+                <div class="judgement-mark">X</div>
+                <div class="judgement-content">
+                  <h4>Baseline</h4>
+                  <p class="judgement-meta">Label: 1 &nbsp; Score: 0.9</p>
+                  <p>The video shows a <strong>sudden and dramatic increase in brightness, likely indicating an explosion or fire, which is an abnormal event.</strong></p>
+                </div>
+              </div>
+              <div class="judgement-card correct">
+                <div class="judgement-mark">O</div>
+                <div class="judgement-content">
+                  <h4>Environment</h4>
+                  <p class="judgement-meta">Label: 0 &nbsp; Score: 0.1</p>
+                  <p>The video shows a <strong>typical scene of a parking lot at night with cars parked and moving in and out.</strong> There is no indication of abnormal, criminal, or deviant behavior.</p>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
-        <pre id="bibtex-code"><code>@article{kim2026csivad,
-  title  = {Context-structured Video Anomaly Detection with Large Vision-Language Models},
-  author = {Kim, Dongjun and Oh, Changjae and Cavallaro, Andrea and Mo, Jeonghoon},
-  year   = {2026},
-  url    = {https://dj991108.github.io/CSI-VAD/}
-}</code></pre>
       </div>
     </section>
   </main>
@@ -347,22 +345,5 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    function copyBibTeX() {
-      const bibtexElement = document.getElementById('bibtex-code');
-      const button = document.querySelector('.copy-bibtex-btn');
-      const copyText = button.querySelector('.copy-text');
-      if (!bibtexElement) return;
-      navigator.clipboard.writeText(bibtexElement.textContent).then(function() {
-        button.classList.add('copied');
-        copyText.textContent = 'Copied';
-        setTimeout(function() {
-          button.classList.remove('copied');
-          copyText.textContent = 'Copy';
-        }, 1600);
-      });
-    }
-  </script>
 </body>
 </html>

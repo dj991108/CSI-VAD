@@ -14,9 +14,8 @@ https://github.com/eliahuhorwitz/Academic-project-page-template
 - `.nojekyll`: disables Jekyll processing on GitHub Pages.
 - `static/css/`: template CSS plus `csi-vad.css` overrides.
 - `static/js/`: template JavaScript assets.
-- `static/images/`: framework, recognition module, qualitative figure, and social preview.
-- `static/videos/`: compact GIF loops for qualitative examples.
-- `static/pdfs/`: current paper PDF.
+- `static/images/`: framework, recognition module, social preview, and video posters.
+- `static/videos/`: MP4 files for qualitative examples.
 
 ## Deploy to GitHub Pages
 
@@ -47,5 +46,4 @@ https://dj991108.github.io/CSI-VAD/
 
 - Replace `arXiv coming soon` when the arXiv URL is available.
 - Replace `Code coming soon` when code release is ready.
-- Replace the temporary BibTeX entry with the final citation.
 - Update the camera-ready LaTeX URL after this page is public.
