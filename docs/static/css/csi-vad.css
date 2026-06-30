@@ -29,11 +29,16 @@ body {
 }
 
 .publication-venue {
-  margin: 0.65rem 0 0.8rem;
-  color: var(--primary-color);
-  font-size: 1.28rem;
-  font-weight: 700;
-  line-height: 1.2;
+  display: block;
+  width: auto;
+  margin: 2rem 0 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.25;
   text-align: center;
 }
 
@@ -43,9 +48,11 @@ body {
 }
 
 .corresponding-author {
-  margin-top: 0.25rem;
-  color: var(--text-secondary);
-  font-size: 0.86rem;
+  margin: 0.25rem 0 0;
+  color: #8191aa;
+  font-size: 0.82rem;
+  font-style: italic;
+  font-weight: 500;
   line-height: 1.25;
   text-align: center;
 }
