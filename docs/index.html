@@ -35,9 +35,6 @@
 
   <title>CSI-VAD | Context-structured Video Anomaly Detection</title>
 
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -80,12 +77,13 @@
               <h1 class="title is-1 publication-title">
                 Context-structured Video Anomaly Detection with Large Vision-Language Models
               </h1>
+              <p class="publication-venue">AVSS 2026</p>
 
               <div class="is-size-5 publication-authors">
                 <span class="author-block"><a href="https://scholar.google.com/citations?user=e6shGrQAAAAJ&amp;hl=ko" target="_blank">Dongjun Kim</a><sup>1</sup></span>
                 <span class="author-block"><a href="https://cj-oh.github.io/" target="_blank">Changjae Oh</a><sup>2</sup></span>
                 <span class="author-block"><a href="https://people.epfl.ch/andrea.cavallaro/?lang=en" target="_blank">Andrea Cavallaro</a><sup>3</sup></span>
-                <span class="author-block"><a href="https://sites.google.com/yonsei.ac.kr/jhmo-yonsei" target="_blank">Jeonghoon Mo</a><sup>1</sup></span>
+                <span class="author-block"><a href="https://sites.google.com/yonsei.ac.kr/jhmo-yonsei" target="_blank">Jeonghoon Mo</a><sup>1,*</sup></span>
               </div>
 
               <div class="is-size-6 publication-authors publication-affiliations">
@@ -93,6 +91,7 @@
                 <span class="author-block"><sup>2</sup>Queen Mary University of London</span>
                 <span class="author-block"><sup>3</sup>EPFL</span>
               </div>
+              <p class="corresponding-author">*Corresponding author</p>
 
               <div class="publication-links">
                 <span class="link-block">
@@ -273,6 +272,11 @@
                 </div>
               </div>
             </div>
+            <p class="case-summary">
+              For the fighting anomaly video, the baseline fails by describing the scene as an ordinary
+              subway situation. In contrast, the Time context branch captures the sustained physical conflict
+              between people and correctly identifies the fighting event as anomalous.
+            </p>
           </article>
 
           <article class="qualitative-case">
@@ -302,6 +306,11 @@
                 </div>
               </div>
             </div>
+            <p class="case-summary">
+              The baseline does not focus on the person's actions and fails by interpreting the video as a
+              normal store scene. The Object context branch instead recognizes that the person in the orange
+              shirt is stealing items, correctly detecting the shoplifting event.
+            </p>
           </article>
 
           <article class="qualitative-case">
@@ -331,6 +340,11 @@
                 </div>
               </div>
             </div>
+            <p class="case-summary">
+              The baseline ignores the parking lot at night context and falsely treats a sudden light change
+              as an explosion or fire. The Environment context branch accounts for the night-time parking-lot
+              setting and correctly decides that the video is normal.
+            </p>
           </article>
         </div>
       </div>

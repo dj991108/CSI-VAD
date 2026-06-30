@@ -28,9 +28,26 @@ body {
   line-height: 1.12 !important;
 }
 
+.publication-venue {
+  margin: 0.65rem 0 0.8rem;
+  color: var(--primary-color);
+  font-size: 1.28rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
 .publication-affiliations {
   color: var(--text-secondary);
   margin-top: 0.35rem;
+}
+
+.corresponding-author {
+  margin-top: 0.25rem;
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+  line-height: 1.25;
+  text-align: center;
 }
 
 .publication-links {
@@ -201,6 +218,18 @@ body {
   grid-template-columns: minmax(260px, 0.42fr) minmax(0, 0.58fr);
   gap: 1.25rem;
   align-items: start;
+}
+
+.case-summary {
+  margin: 1rem 0 0;
+  padding: 0.95rem 1rem;
+  border: 1px solid #c9d8e6;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 8px;
+  background: #f6fbf9;
+  color: #23313d;
+  font-size: 0.98rem;
+  line-height: 1.55;
 }
 
 .video-frame {
