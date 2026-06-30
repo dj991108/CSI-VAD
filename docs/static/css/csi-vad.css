@@ -45,10 +45,11 @@ body {
 .publication-affiliations {
   color: var(--text-secondary);
   margin-top: 0.35rem;
+  margin-bottom: 0;
 }
 
 .corresponding-author {
-  margin: 0.08rem 0 0;
+  margin: 0 0 0;
   color: #8191aa;
   font-size: 0.82rem;
   font-style: italic;
@@ -62,7 +63,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  margin-top: 1.9rem;
+  margin-top: 2.8rem;
 }
 
 .publication-links .button {
