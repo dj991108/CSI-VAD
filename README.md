@@ -88,15 +88,6 @@ for name in ("environment", "object", "time"):
 PY
 ```
 
-## Tests
-
-```bash
-pytest -q
-python -m compileall -q csi_vad scripts infer.py
-```
-
-The automated suite is CPU-only. Full inference requires a CUDA-capable NVIDIA GPU and the downloaded model weights.
-
 ## Citation
 
 ```bibtex
