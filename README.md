@@ -1,11 +1,11 @@
 <h1 align="center">Context-structured Video Anomaly Detection with Large Vision-Language Models</h1>
 
-<p align="center">Official inference code for AVSS 2026.</p>
-
 <p align="center">
-  <a href="https://dj991108.github.io/CSI-VAD/"><img src="https://img.shields.io/badge/Project%20Page-CSI--VAD-2ea44f?style=for-the-badge&logo=githubpages&logoColor=white" alt="Project Page"></a>
-  <a href="https://arxiv.org/abs/2607.19077"><img src="https://img.shields.io/badge/arXiv-2607.19077-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv"></a>
+  <a href="https://arxiv.org/abs/2607.19077"><img src="https://img.shields.io/badge/ArXiv-2607.19077-red" alt="ArXiv"></a>
+  <a href="https://dj991108.github.io/CSI-VAD/"><img src="https://img.shields.io/badge/Project-Page-Blue" alt="Project Page"></a>
 </p>
+
+This is the official repository for "Context-structured Video Anomaly Detection with Large Vision-Language Models," published at AVSS 2026. This repository contains inference code for context-structured video anomaly detection on a single input video.
 
 ## Installation
 
