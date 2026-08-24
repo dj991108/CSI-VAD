@@ -34,16 +34,18 @@ Run the default 32-frame setting:
 python infer.py --video /path/to/video.mp4 --output outputs/result.json
 ```
 
-Set a custom frame budget with `--num-frames`:
+Choose one of the supported frame budgets (`32`, `64`, `128`, or `256`):
 
 ```bash
+FRAME_BUDGET=128
+
 python infer.py \
   --video /path/to/video.mp4 \
-  --output outputs/result_256.json \
-  --num-frames 256
+  --output /path/to/result.json \
+  --num-frames "$FRAME_BUDGET"
 ```
 
-The default final score is Noisy-OR and the default final label uses OR voting. All paper aggregation variants can be selected from the command line:
+The default final score is Noisy-OR and the default final label uses OR voting. All supported aggregation methods can be selected from the command line:
 
 ```bash
 python infer.py \
@@ -77,7 +79,7 @@ Generated frames, object overlays, captions, and context files remain in the ign
 
 ### Context branch results
 
-Each context branch can be inspected separately after inference:
+The final result contains separate predictions from the environment, object, and time branches. Inspect them with:
 
 ```bash
 python - <<'PY'
@@ -102,7 +104,7 @@ pytest -q
 python -m compileall -q csi_vad scripts infer.py
 ```
 
-The automated suite is CPU-only. Full inference additionally requires the documented GPU environment and downloaded weights.
+The automated suite is CPU-only. Full inference requires a CUDA-capable NVIDIA GPU and the downloaded model weights.
 
 ## Citation
 
@@ -117,4 +119,4 @@ The automated suite is CPU-only. Full inference additionally requires the docume
 
 ## License
 
-Original CSI-VAD source code is released under the [MIT License](LICENSE). Third-party packages and model weights retain their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). In particular, the paper-faithful object branch uses BoxMOT/StrongSORT and is subject to their copyleft license terms.
+Original CSI-VAD source code is released under the [MIT License](LICENSE). Third-party packages and model weights retain their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). In particular, the object branch uses BoxMOT/StrongSORT and is subject to their copyleft license terms.
