@@ -1,18 +1,11 @@
-# CSI-VAD
+<h1 align="center">Context-structured Video Anomaly Detection with Large Vision-Language Models</h1>
 
-Official inference code for **Context-structured Video Anomaly Detection with Large Vision-Language Models** (AVSS 2026).
+<p align="center">Official inference code for AVSS 2026.</p>
 
-[[Project page](https://dj991108.github.io/CSI-VAD/)] [[arXiv](https://arxiv.org/abs/2607.19077)]
-
-## Requirements
-
-- Linux
-- NVIDIA GPU with CUDA support
-- Python 3.11
-- Conda or Miniconda
-- FFmpeg
-
-The camera-ready experiments used one NVIDIA A100 80GB GPU. The public runner loads incompatible model stages sequentially to reduce peak GPU memory use.
+<p align="center">
+  <a href="https://dj991108.github.io/CSI-VAD/"><img src="https://img.shields.io/badge/Project%20Page-CSI--VAD-2ea44f?style=for-the-badge&logo=githubpages&logoColor=white" alt="Project Page"></a>
+  <a href="https://arxiv.org/abs/2607.19077"><img src="https://img.shields.io/badge/arXiv-2607.19077-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv"></a>
+</p>
 
 ## Installation
 
@@ -41,7 +34,7 @@ Run the default 32-frame setting:
 python infer.py --video /path/to/video.mp4 --output outputs/result.json
 ```
 
-Run the camera-ready 256-frame setting:
+Set a custom frame budget with `--num-frames`:
 
 ```bash
 python infer.py \
@@ -81,6 +74,26 @@ Use `python infer.py --help` for all options. Interrupted runs reuse the ignored
 - the selected final prediction, effective configuration, model revisions, video metadata, and stage timings.
 
 Generated frames, object overlays, captions, and context files remain in the ignored work directory and are not copied into the final result.
+
+### Context branch results
+
+Each context branch can be inspected separately after inference:
+
+```bash
+python - <<'PY'
+import json
+from pathlib import Path
+
+result = json.loads(Path("outputs/result.json").read_text(encoding="utf-8"))
+
+for name in ("environment", "object", "time"):
+    branch = result["branches"][name]
+    print(f"\n[{name}]")
+    print(f"label: {branch['label']}")
+    print(f"score: {branch['score']:.4f}")
+    print(f"explanation: {branch['explanation']}")
+PY
+```
 
 ## Tests
 
