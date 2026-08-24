@@ -28,20 +28,13 @@ Model downloads are stored in the Hugging Face cache and the ignored local `weig
 
 ## Inference
 
-Run the default 32-frame setting:
+Run inference with the default frame budget:
 
 ```bash
 python infer.py --video /path/to/video.mp4 --output outputs/result.json
 ```
 
-Set the desired frame budget with `--num-frames`:
-
-```bash
-python infer.py \
-  --video /path/to/video.mp4 \
-  --output /path/to/result.json \
-  --num-frames FRAME_BUDGET
-```
+Use `--num-frames` to configure the frame budget.
 
 The default final score is Noisy-OR and the default final label uses OR voting. All supported aggregation methods can be selected from the command line:
 

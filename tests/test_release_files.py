@@ -8,7 +8,7 @@ def test_readme_documents_minimal_runnable_command() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
 
     assert "python infer.py --video" in readme
-    assert "--num-frames FRAME_BUDGET" in readme
+    assert "Use `--num-frames` to configure the frame budget." in readme
     assert "python scripts/download_models.py" in readme
     assert "python scripts/verify_environment.py" in readme
     assert "https://arxiv.org/abs/2607.19077" in readme
