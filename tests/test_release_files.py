@@ -38,15 +38,11 @@ def test_license_scope_and_third_party_notices_are_explicit() -> None:
     assert "StrongSORT" in notices and "GPL-3.0" in notices
     assert "RF-DETR" in notices and "Apache-2.0" in notices
     assert "Platform Model License 1.0" in notices
-    assert "Academic Project Page Template" in notices
     assert "not covered by the CSI-VAD MIT License" in notices
 
 
-def test_project_page_code_button_points_to_repository() -> None:
-    page = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
-
-    assert 'href="https://github.com/dj991108/CSI-VAD"' in page
-    assert "Code coming soon" not in page
+def test_project_page_is_not_vendored_in_code_repository() -> None:
+    assert not (ROOT / "docs").exists()
 
 
 def test_generated_and_private_artifacts_are_ignored() -> None:
@@ -60,7 +56,6 @@ def test_public_text_files_do_not_expose_private_server_paths() -> None:
     private_markers = ("/home1/", "/home/irteam/", "/data/", "/gpfs/", "qc25501")
     public_files = [
         ROOT / "README.md",
-        ROOT / "docs" / "README.md",
         ROOT / "environment.yml",
         ROOT / "requirements.txt",
     ]

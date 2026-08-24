@@ -11,6 +11,5 @@ The repository-level MIT License applies only to original CSI-VAD source code. T
 | [Qwen2.5](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) | Temporal summarization and inference | See the model card and repository license |
 | [Sentence Transformers](https://github.com/huggingface/sentence-transformers) | Caption embeddings | Apache-2.0 |
 | [OpenCV](https://opencv.org/) | Video decoding and rendering | Apache-2.0 |
-| [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) | Project page foundation | MIT |
 
 CSI-VAD does not vendor BoxMOT, StrongSORT, RF-DETR, or model weights. The setup scripts download or install them from their upstream distribution locations. Using the complete runtime may create obligations beyond those of the MIT-licensed CSI-VAD files. Review the upstream terms and obtain institutional legal guidance when required.
