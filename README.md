@@ -34,15 +34,13 @@ Run the default 32-frame setting:
 python infer.py --video /path/to/video.mp4 --output outputs/result.json
 ```
 
-Choose one of the supported frame budgets (`32`, `64`, `128`, or `256`):
+Set the desired frame budget with `--num-frames`:
 
 ```bash
-FRAME_BUDGET=128
-
 python infer.py \
   --video /path/to/video.mp4 \
   --output /path/to/result.json \
-  --num-frames "$FRAME_BUDGET"
+  --num-frames FRAME_BUDGET
 ```
 
 The default final score is Noisy-OR and the default final label uses OR voting. All supported aggregation methods can be selected from the command line:
